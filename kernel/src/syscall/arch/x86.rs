@@ -13,6 +13,7 @@ use crate::syscall::{
     chmod::{sys_chmod, sys_fchmod, sys_fchmodat},
     chown::{sys_chown, sys_fchown, sys_fchownat, sys_lchown},
     chroot::sys_chroot,
+    clock_settime::sys_clock_settime,
     clock_gettime::sys_clock_gettime,
     clone::{sys_clone, sys_clone3},
     close::sys_close,
@@ -277,6 +278,7 @@ impl_syscall_nums_and_dispatch_fn! {
     SYS_TIMER_SETTIME = 223    => sys_timer_settime(args[..4]);
     SYS_TIMER_GETTIME = 224    => sys_timer_gettime(args[..2]);
     SYS_TIMER_DELETE = 226     => sys_timer_delete(args[..1]);
+    SYS_CLOCK_SETTIME = 227    => sys_clock_settime(args[..2]);
     SYS_CLOCK_GETTIME = 228    => sys_clock_gettime(args[..2]);
     SYS_CLOCK_NANOSLEEP = 230  => sys_clock_nanosleep(args[..4]);
     SYS_EXIT_GROUP = 231       => sys_exit_group(args[..1]);
