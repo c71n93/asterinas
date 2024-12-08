@@ -118,6 +118,7 @@ mod setresuid;
 mod setreuid;
 mod setsid;
 mod setsockopt;
+mod settimeofday;
 mod setuid;
 mod shutdown;
 mod sigaltstack;

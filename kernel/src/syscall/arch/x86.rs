@@ -111,6 +111,7 @@ use crate::syscall::{
     setreuid::sys_setreuid,
     setsid::sys_setsid,
     setsockopt::sys_setsockopt,
+    settimeofday::sys_settimeofday,
     setuid::sys_setuid,
     shutdown::sys_shutdown,
     sigaltstack::sys_sigaltstack,
@@ -262,6 +263,7 @@ impl_syscall_nums_and_dispatch_fn! {
     SYS_SETRLIMIT = 160        => sys_setrlimit(args[..2]);
     SYS_CHROOT = 161           => sys_chroot(args[..1]);
     SYS_SYNC = 162             => sys_sync(args[..0]);
+    SYS_SETTIMEOFDAY = 164     => sys_settimeofday(args[..1]);
     SYS_MOUNT = 165            => sys_mount(args[..5]);
     SYS_UMOUNT2 = 166           => sys_umount(args[..2]);
     SYS_GETTID = 186           => sys_gettid(args[..0]);
